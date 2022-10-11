@@ -49,6 +49,7 @@ const MintModal = ({
   onMinting
 }: IMintModal) => {
   const wallet = useWallet()
+  //console.log("Check for items remaining",itemsRemaining);
   return (
     <Modal
       aria-labelledby="transition-modal-title"
@@ -68,7 +69,7 @@ const MintModal = ({
           <CardMedia src="/assets/images/collection.gif" component={'img'} sx={{ borderRadius: 4 }} height={400} width={100} alt="gif" />
           <Stack direction={'row'} spacing={2} mt={2} mb={2} alignItems={'center'}>
             {/* @ts-ignore */}
-            {itemsRemaining > 0 && open && (
+            { open && (
               <Stack direction={'row'} spacing={0} alignItems="center" justifyContent={'center'}>
                 <MultipleMint onError={onError} onFinish={onFinish} onMinting={onMinting} />
               </Stack>
